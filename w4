@@ -1,0 +1,35 @@
+df.shape
+df.info()
+df.columns.values
+df.dtypes
+
+# Visualize missing values as a matrix
+msno.matrix(df);
+
+
+
+df = df.drop(['customerID'], axis = 1)
+df.head()
+
+df['TotalCharges'] = pd.to_numeric(df.TotalCharges, errors='coerce')
+df.isnull().sum()
+
+
+
+df[np.isnan(df['TotalCharges'])]
+
+df[df['tenure'] == 0].index
+
+df.drop(labels=df[df['tenure'] == 0].index, axis=0, inplace=True)
+df[df['tenure'] == 0].index
+
+df.fillna(df["TotalCharges"].mean())
+df.isnull().sum()
+
+df["SeniorCitizen"]= df["SeniorCitizen"].map({0: "No", 1: "Yes"})
+df.head()
+
+df["InternetService"].describe(include=['object', 'bool'])
+
+numerical_cols = ['tenure', 'MonthlyCharges', 'TotalCharges']
+df[numerical_cols].describe()
