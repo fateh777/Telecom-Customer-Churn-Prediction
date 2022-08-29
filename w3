@@ -1,0 +1,2 @@
+#loading data
+df = pd.read_csv('../input/telco-customer-churn/WA_Fn-UseC_-Telco-Customer-Churn.csv')
